@@ -1,7 +1,10 @@
-import axios from "axios";
-
-const API_BASE_URL = "https://fakestoreapi.com";
-
-export const fetchProducts = () => axios.get(`${API_BASE_URL}/products`);
-export const fetchProductById = (id) => axios.get(`${API_BASE_URL}/products/${id}`);
-export const fetchProductCategories =(id)=> axios.get(`${API_BASE_URL}/products/${id}`);
+export const fetchProducts = async () => {
+    try {
+      const res = await fetch("https://fakestoreapi.com/products");
+      const data = await res.json();
+      return data;
+    } catch (error) {
+      console.error("Failed to fetch products:", error);
+    }
+  };
+  

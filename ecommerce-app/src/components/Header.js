@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import SearchBar from "./SearchBar";
 
-const Header = ({ setSearchQuery, categories, setSelectedCategory ,selectedCategory}) => {
+const Header = ({ setSearchQuery, categories, setSelectedCategory, selectedCategory }) => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   return (
@@ -26,7 +26,7 @@ const Header = ({ setSearchQuery, categories, setSelectedCategory ,selectedCateg
 
         {/* Search Bar */}
         <div className="hidden md:flex flex-1 px-6">
-          <SearchBar onSearch={(setSearchQuery)} />
+          <SearchBar onSearch={setSearchQuery} />
         </div>
 
         {/* Navigation Links */}
@@ -66,7 +66,7 @@ const Header = ({ setSearchQuery, categories, setSelectedCategory ,selectedCateg
 
       {/* Category Navigation */}
       {categories?.length > 0 && (
-        <div className="bg-blue-800 text-white py-6 px-4 align-middle">
+        <div className="bg-blue-800 text-white py-6 px-4">
           <div className="container mx-auto flex overflow-x-auto space-x-4">
             {categories.map((category) => (
               <button

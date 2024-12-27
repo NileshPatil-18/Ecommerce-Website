@@ -1,44 +1,28 @@
 import React, { useState } from "react";
-import { FiSearch } from "react-icons/fi";
 
 const SearchBar = ({ onSearch }) => {
-  const [showSearchBar, setShowSearchBar] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSearch(searchTerm);  // Correctly calling onSearch with the current search term
+  const handleSearch = () => {
+    onSearch(searchTerm);
   };
 
   return (
-    
-    <div className="relative text-black">
-      {!showSearchBar ? (
-        <FiSearch
-          className="text-2xl text-black cursor-pointer"
-          onClick={() => setShowSearchBar(true)}
-        />
-      ) : (
-        <div className="flex items-center space-x-2">
-          <form onSubmit={handleSubmit} className="w-full flex">
-          <input
-            type="text"
-            placeholder="Search products..."
-            value={searchTerm}
-            onChange={handleChange}
-            className="w-full py-2 px-4 rounded-l-md focus:outline-none"
-          />
-          <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded-r-md hover:bg-blue-500">
-            Search
-          </button>
-        </form>
-        </div>
-       )}
-      </div>
+    <div className="w-full flex items-center">
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search for products"
+        className="px-4 py-2 rounded-md w-full text-black"
+      />
+      <button
+        onClick={handleSearch}
+        className="ml-2 bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600"
+      >
+        Search
+      </button>
+    </div>
   );
 };
 
