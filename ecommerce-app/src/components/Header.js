@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import SearchBar from "./SearchBar";
+import logo from "../assets/logo.png"; 
 
 const Header = ({ setSearchQuery, categories, setSelectedCategory, selectedCategory }) => {
   return (
@@ -10,9 +11,9 @@ const Header = ({ setSearchQuery, categories, setSelectedCategory, selectedCateg
         {/* Logo Section */}
         <div className="flex items-center space-x-4">
           <Link to="/" className="flex items-center hover:opacity-80 transition-all duration-300">
-            <img src="/logo.png" alt="E-Shop Logo" className="h-10 w-auto" />
+            <img src={logo} alt="E-Shop Logo" className="h-10 w-auto" />
             <span className="text-2xl font-bold tracking-wide ml-2 hover:text-yellow-400 transition-colors duration-300">
-              E-Shop
+            ShopEase
             </span>
           </Link>
         </div>

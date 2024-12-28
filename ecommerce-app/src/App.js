@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ProtectedRoute from "./pages/ProtectedRoute";
 import ProductList from "./components/ProductList";
 import ProductDetail from "./pages/ProductDetail";
 import CartPage from "./pages/CartPage";
+import SignUp from "./pages/SignUp";
 import WishlistPage from "./pages/WishlistPage";
 import WhatWeSell from "./components/WhatWeSell";
 import Banner from "./components/Banner";
@@ -74,7 +76,15 @@ const App = () => {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="signup" element ={<SignUp/>} />
+          <Route
+                    path="/dashboard"
+                    element={
+                        <ProtectedRoute>
+                            <Dashboard />
+                        </ProtectedRoute>
+                    }
+                />
         </Routes>
         <WhatWeSell />
       </main>
