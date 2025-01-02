@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDgQDQoOmqzrOgU9d__0dyyLO3XoO8NY6Q",
+    apiKey: "add your api key",
     authDomain: "e-commerce-app-6cdc2.firebaseapp.com",
     projectId: "e-commerce-app-6cdc2",
     storageBucket: "e-commerce-app-6cdc2.firebasestorage.app",
     messagingSenderId: "759341780726",
-    appId: "1:759341780726:web:d770281f8d2eb9c8d366d7",
+    appId: "add yur api id",
     measurementId: "G-MB6SVB3XKL"
 };
 
